@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Medios de Pago - Education For The World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #1e88e5;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+
+        .box {
+            background: #f9f9f9;
+            border-left: 5px solid #1e88e5;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .important {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .copiable {
+            margin-right: 10px;
+        }
+
+        .mensaje {
+            color: green;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        button {
+            padding: 2px 6px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid #1e88e5;
+            background-color: #ffffff;
+            color: #1e88e5;
+        }
+
+        button:hover {
+            background-color: #1e88e5;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💳 Medios de Pago Disponibles</h1>
+
+    <h2>🔁 Transferencias Bancarias</h2>
+    <div class="box">
+        <p><strong>Banco Ueno</strong></p>
+        <p>
+            Alias: <span class="copiable">80132451-3</span>
+        </p>
+        <p>
+            Cuenta: <span class="copiable">619744692</span>
+        </p>
+        <p>
+            Titular: Education For The World
+        </p>
+    </div>
+
+    <div class="box">
+        <p><strong>Banco Itaú</strong></p>
+        <p>
+            Cuenta: <span class="copiable">700102424</span>
+        </p>
+        <p>
+            RUC: <span class="copiable">80132451-3</span>
+        </p>
+        <p>
+            Titular: Education For The World
+        </p>
+    </div>
+
+     <div class="box">
+        <p><strong>Banco Interfisa</strong></p>
+        <p>
+            Cuenta: <span class="copiable">249050391</span>
+        </p>
+        <p>
+            RUC: <span class="copiable">80132451-3</span>
+        </p>
+        <p>
+            Titular: Education For The World
+        </p>
+    </div>
+
+    <h2>📲 Giros</h2>
+    <div class="box">
+        <p><strong>Tigo Money</strong></p>
+        <p>
+            Número: <span class="copiable">0982 578 410</span>
+        </p>
+    </div>
+
+    <div class="box">
+        <p><strong>Personal Pay</strong></p>
+        <p>
+            Número: <span class="copiable">0972 303 661</span>
+        </p>
+    </div>
+
+    <h2>💰 Depósitos</h2>
+    <div class="box">
+        <p><strong>Banco Ueno</strong></p>
+        <p>
+            Cuenta: <span class="copiable">619744692</span>
+        </p>
+        <p>
+            RUC: <span class="copiable">80132451-3</span>
+        </p>
+        <p>Titular: Education For The World</p>
+    </div>
+
+    <div class="box">
+        <p><strong>Banco Itaú</strong></p>
+        <p>
+            Cuenta: <span class="copiable">700102424</span>
+        </p>
+        <p>
+            RUC: <span class="copiable">80132451-3</span>
+        </p>
+        <p>Titular: Education For The World</p>
+    </div>
+
+     <div class="box">
+        <p><strong>Banco Interfisa</strong></p>
+        <p>
+            Cuenta: <span class="copiable">249050391</span>
+        </p>
+        <p>
+            RUC: <span class="copiable">80132451-3</span>
+        </p>
+        <p>Titular: Education For The World</p>
+    </div>
+
+    <div class="important">
+        📩 Una vez abonado, favor remitir su comprobante de pago a nuestro número de WhatsApp para confirmar el mismo y adjuntar a la cuota.
+    </div>
+
+    <div class="footer">
+        ©️ Education For The World
+    </div>
+</div>
+
+<script>
+document.querySelectorAll(".copiable").forEach(span => {
+    // Crear botón
+    const btn = document.createElement("button");
+    btn.innerText = "Copiar";
+
+    // Crear mensaje
+    const mensaje = document.createElement("span");
+    mensaje.className = "mensaje";
+
+    // Insertar botón y mensaje después del texto
+    span.after(btn);
+    btn.after(mensaje);
+
+    // Función para copiar al portapapeles
+    btn.addEventListener("click", () => {
+        navigator.clipboard.writeText(span.innerText)
+            .then(() => {
+                mensaje.innerText = "¡Copiado!";
+                setTimeout(() => mensaje.innerText = "", 2000);
+            })
+            .catch(err => {
+                mensaje.innerText = "Error al copiar";
+                setTimeout(() => mensaje.innerText = "", 2000);
+            });
+    });
+});
+</script>
+
+</body>
+</html>
